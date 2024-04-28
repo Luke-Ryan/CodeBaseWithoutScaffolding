@@ -14,7 +14,7 @@ public class App extends JFrame {
         boolean stageBuilt = false;
 
         public CheckersGame(){
-            setPreferredSize(new Dimension(730, 500));
+            setPreferredSize(new Dimension(730, 900));
             this.addKeyListener(this);
             board = new Board();
             stageBuilt = true;

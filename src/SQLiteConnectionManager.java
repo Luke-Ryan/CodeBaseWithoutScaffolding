@@ -104,8 +104,8 @@ public class SQLiteConnectionManager {
         String sql = "INSERT INTO moves(moveNumber,instruction) VALUES("+id+","+move+")";
 
         try (Connection conn = DriverManager.getConnection(databaseURL);
-                PreparedStatement pstmt = conn.prepareStatement(sql);) {
-            pstmt.executeUpdate();
+                PreparedStatement pstmt = conn.prepareStatement(sql);) { // processing the sql statement
+            pstmt.executeUpdate(); // executing it in the database
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -118,7 +118,7 @@ public class SQLiteConnectionManager {
      */
     public void addValidMove(String move){
 
-        String sql = "INSERT INTO moves(instruction) VALUES(?)";
+        String sql = "INSERT INTO moves(instruction) VALUES(?)"; // take a look at week 4 how this sql line is different from others
 
         try (Connection conn = DriverManager.getConnection(databaseURL);
             PreparedStatement pstmt = conn.prepareStatement(sql)) {
